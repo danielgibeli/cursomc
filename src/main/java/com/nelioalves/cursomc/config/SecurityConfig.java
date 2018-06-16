@@ -57,7 +57,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
             http.headers().frameOptions().disable();
         }
-		
 		http.cors().and().csrf().disable();
 		http.authorizeRequests()
 		.antMatchers(HttpMethod.POST, PUBLIC_MATCHERS_POST).permitAll()
@@ -67,7 +66,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtUtil));
 		http.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtUtil, userDetailsService));
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
 	}
 	
 	@Override

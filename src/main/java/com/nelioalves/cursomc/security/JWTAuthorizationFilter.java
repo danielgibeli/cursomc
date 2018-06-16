@@ -48,5 +48,4 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 		}
 		return null;
 	}
-
 }

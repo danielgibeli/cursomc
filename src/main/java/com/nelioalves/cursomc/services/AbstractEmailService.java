@@ -1,6 +1,5 @@
 package com.nelioalves.cursomc.services;
 
-
 import java.util.Date;
 
 import javax.mail.MessagingException;
@@ -35,7 +34,6 @@ public abstract class AbstractEmailService implements EmailService {
 	}
 
 	protected SimpleMailMessage prepareSimpleMailMessageFromPedido(Pedido obj) {
-
 		SimpleMailMessage sm = new SimpleMailMessage();
 		sm.setTo(obj.getCliente().getEmail());
 		sm.setFrom(sender);

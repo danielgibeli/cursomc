@@ -25,7 +25,5 @@ public class CredenciaisDTO implements Serializable{
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	
-	
+	}	
 }

@@ -69,13 +69,13 @@ public class ClienteResource {
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	@RequestMapping(value= "/page", method=RequestMethod.GET)
 	public ResponseEntity<Page<ClienteDTO>> findPage(
-			@RequestParam(value="page", defaultValue="0") Integer page, 
-			@RequestParam(value="linesPerPage", defaultValue="24") Integer linesPerPage, 
-			@RequestParam(value="orderBy", defaultValue="nome") String orderBy,
-			@RequestParam(value="direction", defaultValue="ASC") String direction) {
-		Page<Cliente> list = service.findPage(page, linesPerPage, orderBy, direction);
-		Page<ClienteDTO> listDto = list.map(obj -> new ClienteDTO(obj));
-				return ResponseEntity.ok().body(listDto);
+				@RequestParam(value="page", defaultValue="0") Integer page, 
+				@RequestParam(value="linesPerPage", defaultValue="24") Integer linesPerPage, 
+				@RequestParam(value="orderBy", defaultValue="nome") String orderBy,
+				@RequestParam(value="direction", defaultValue="ASC") String direction) {
+				Page<Cliente> list = service.findPage(page, linesPerPage, orderBy, direction);
+				Page<ClienteDTO> listDto = list.map(obj -> new ClienteDTO(obj));
+			return ResponseEntity.ok().body(listDto);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)

@@ -43,6 +43,4 @@ public class ProdutoDTO implements Serializable{
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
-	
-
 }
